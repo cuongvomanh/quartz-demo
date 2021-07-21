@@ -87,7 +87,7 @@ public class JobScheduleCreator {
         SimpleTriggerFactoryBean factoryBean = new SimpleTriggerFactoryBean();
         factoryBean.setName(triggerName);
         factoryBean.setStartTime(startTime);
-        factoryBean.setRepeatInterval(repeatTime);
+        if (repeatTime != null) factoryBean.setRepeatInterval(repeatTime);
         factoryBean.setRepeatCount(SimpleTrigger.REPEAT_INDEFINITELY);
         factoryBean.setMisfireInstruction(misFireInstruction);
         factoryBean.afterPropertiesSet();
